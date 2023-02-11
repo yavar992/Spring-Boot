@@ -1,19 +1,25 @@
 package com.yavar.springboot.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import jakarta.persistence.*;
 
 
 @Entity
+@JsonSerialize
 public class Department {
     @Id
     @GeneratedValue
-
+    @JsonProperty("departmentId")
     private long departmentId;
     @Column
+    @JsonProperty("departmentName")
     private String departmentName;
     @Column
+    @JsonProperty("departmentAddress")
     private String departmentAddress;
     @Column
+    @JsonProperty("departmentCode")
     private String departmentCode;
 
     public Department(long departmentId, String departmentName, String departmentAddress, String departmentCode) {
